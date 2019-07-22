@@ -14,4 +14,6 @@ def top_page():
 def show_list():
     title = "はてな人気リスト"
     results = scrap.get_hatena_entries('https://b.hatena.ne.jp/hotentry/it')
+    # URLを変更すれば別ジャンルも取得できます。
+    # results = scrap.get_hatena_entries('https://b.hatena.ne.jp/hotentry/life') 
     return render_template('list.html', title = title, results = results)
