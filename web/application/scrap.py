@@ -13,10 +13,11 @@ def get_hatena_entries(target_url):
         title = data.select('a.js-keyboard-openable')
         users = data.select('span.entrylist-contents-users')
         posted_date = data.select('li.entrylist-contents-date')
-        line = [] # リストで帰ってくるので取り出す
+        link = data.find('a').get('href')
+        line = [] # 3つはリストで帰ってくるので取り出す
         line.append(title[0].text)
         line.append(posted_date[0].text)
         line.append(users[0].text)
+        line.append(link)
         results.append(line)
     return(results)
-    
