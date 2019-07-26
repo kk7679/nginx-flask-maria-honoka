@@ -31,7 +31,7 @@ services:
     build: ./db
     container_name: db01
     volumes:
-      - test_db_data:/val/lib/mysql
+      - test_db_data:/var/lib/mysql
       - ./db/backup:/docker-entrypoint-initdb.d
     env_file:
       - ./db/conf.env
